@@ -43,9 +43,10 @@ class Wood_Leaf_Separator:
             if (file == '.DS_Store' or file[-4:] != '.txt'): # if the file is the DS_STORE directory or the file does NOT end with .txt, continue
                 print(file[-4])
                 continue
-            print("Processing: " + file)
+            print("\nOpening: " + file)
             txt_file = open(self.path_to_TXT + '/' + file, 'r')
             data = self.read_values(txt_file)
+            print("Processing: " + file)
             wood, leaves = generic_tree(data)
             self.write_save_file(wood, file)        # Only the wood is necessary, we removing leaves
         
