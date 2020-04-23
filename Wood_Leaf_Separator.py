@@ -19,14 +19,15 @@ class Wood_Leaf_Separator:
     def get_paths(self):
         self.path_to_TXT = 0
         self.path_to_TXT = raw_input("Path to the txt files (--help for options): ")
-        if (self.path_to_TXT == '--help'):
+        while (self.path_to_TXT == '--help'):
             self.display_help()
+            self.path_to_TXT = raw_input("Path to the txt files (--help for options): ")
+
     
     def display_help(self):
         print("The path to the txt should be the folder created by PLY2TXT")
         print("If the files were not created by PLY2TXT, then the folder given")
         print("should contain .txt files that only contain the 'x y z' float numbers.\n\n")
-        self.get_paths()
 
     def read_values(self, file):
         data = []
@@ -37,9 +38,12 @@ class Wood_Leaf_Separator:
         return points
 
     def open_files(self):
+        print
         for file in os.listdir(self.path_to_TXT):       # Maybe add some kind of progress bar here so that the users know that its working, cuz generic_tree() on line 45 takes a long time to process the trees
-            if (file == '.DS_Store' or file[-4] != '.txt'): # if the file is the DS_STORE directory or the file does NOT end with .txt, continue
+            if (file == '.DS_Store' or file[-4:] != '.txt'): # if the file is the DS_STORE directory or the file does NOT end with .txt, continue
+                print(file[-4])
                 continue
+            print("Processing: " + file)
             txt_file = open(self.path_to_TXT + '/' + file, 'r')
             data = self.read_values(txt_file)
             wood, leaves = generic_tree(data)
