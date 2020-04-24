@@ -35,3 +35,6 @@ TreeQSM can be run from within matlab. This scripts can be used with the PLY fil
               treeqsm(points, inputs);
        
 This will also display bring a display with the cylinders around the branches and trunk while doing its best to get rid of leaves and other unecessary points. 
+
+MainScript is the script that is supposed to be run. Currently opens PLYTXT.py into a stream and runs the this script.
+Wood_Leaf_Separator.py is currently commented out until it is fixed.
