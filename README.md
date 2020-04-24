@@ -25,7 +25,7 @@ Optqsm uses TreeQSM to automate the qsm construction from the pointclouds. Optqs
                cd ../
                matlab --nodisplay -r "runopt("path_to_intermediate/*/*/.mat", "simple")"
      
-from the terminal. HOWEVER, you need to create two directories called models and intermediate. Look at the optqsm README file to learn more.
+from the terminal. HOWEVER, ITS IMPORTANT you need to create two directories called models and intermediate. Look at the optqsm README file to learn more.
 
 TreeQSM can be run from within matlab. This scripts can be used with the PLY files directly to build the QSM object. 
 
