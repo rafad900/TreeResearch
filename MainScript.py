@@ -87,3 +87,12 @@ if __name__=='__main__':
         print "\nFinished Part 1. Starting Part 2. This will hopefully be much faster. \n"
         os.chdir("..")
         subprocess.call(['matlab' ,'-nodisplay', '-r', 'runopt(\'./intermediate/*/*.mat\', \'simple\')'])
+    else: 
+        print "Beginning the matlab process. Part 1 of 2. This can take a while. \n"
+        os.chdir(path_to_ply + "/models/intermediate")
+        subprocess.call([path, '-nodisplay', '-r', 'runqsm(\'../../' + path_to_txt + '/*.txt\', \'simple\', 10)'])
+        print "\nFinished Part 1. Starting Part 2. This will hopefully be much faster. \n"
+        os.chdir("..")
+        subprocess.call([path ,'-nodisplay', '-r', 'runopt(\'./intermediate/*/*.mat\', \'simple\')'])
+
+    print("It has created the models in the /" + path_to_ply + "/models folder")
