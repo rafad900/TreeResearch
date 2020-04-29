@@ -13,6 +13,12 @@ class WoodLeafSeparator:
         self.create_directory()
         self.convert_ply()
 
+    def return_ply_path(self):
+        return self.path_to_ply
+
+    def return_new_directory(self):
+        return self.new_directory
+
     def create_directory(self):
         try:
             os.mkdir(self.path_to_ply + '/' + self.new_directory)
