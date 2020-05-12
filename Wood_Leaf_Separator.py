@@ -21,7 +21,7 @@ class Wood_Leaf_Separator:
     
     def get_paths(self):
         self.path_to_TXT = 0
-        self.path_to_TXT = raw_input("Path to the txt files (--help for options): ")
+        self.path_to_TXT = raw_input("Path tR the txt files (--help for options): ")
         while (self.path_to_TXT == '--help'):
             self.display_help()
             self.path_to_TXT = raw_input("Path to the txt files (--help for options): ")

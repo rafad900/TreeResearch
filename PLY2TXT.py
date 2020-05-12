@@ -20,17 +20,20 @@ class WoodLeafSeparator:
         return self.new_directory
 
     def create_directory(self):
-        try:
-            os.mkdir(self.path_to_ply + '/' + self.new_directory)
-        except(OSError) as e:
-            print "\n\n{} \nDid you give a valid subfolder for the txt files?\n\n".format(type(e))
-            self.get_paths()
-        else:
-            print("\n\nSuccesfully created new directory\n\n")
+		# Separate the folder of the ply and the txt.
+		
+        if (not os.path.isdir(self.path_to_ply + '/' + self.new_directory)):
+            try:
+                os.mkdir(self.path_to_ply + '/' + self.new_directory)
+            except(OSError) as e:
+                print "\n\n{} \nDid you give a valid subfolder for the txt files?\n\n".format(type(e))
+                self.get_paths()
+            else:
+                print("\n\nSuccesfully created new directory\n\n")
 
     def convert_ply(self):
         for file in os.listdir(self.path_to_ply):
-            if (file == '.DS_Store' or file == self.new_directory):    # ADD ANY OTHER HIDDEN FOLDERS OR ANYTHING THAT ISNT A PLY FILE
+            if file.find('.ply') == -1:    # ADD ANY OTHER HIDDEN FOLDERS OR ANYTHING THAT ISNT A PLY FILE
                 continue
             print("Processing: " + file)
             pcd_load = o3d.io.read_point_cloud(self.path_to_ply + '/' + file)

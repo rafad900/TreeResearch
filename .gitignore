@@ -4,3 +4,9 @@ c1_tls_p1301_trees
 .vscode
 *.json
 *.DS_Store
+*.mat
+*.ply
+*points.txt
+*trees.txt
+*models.dat
+*.zip

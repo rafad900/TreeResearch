@@ -26,6 +26,7 @@ inputs.PatchDiam2Min = [0.02 0.03]; % Minimum patch size of the cover sets in th
 inputs.PatchDiam2Max = [0.06 0.08]; % Maximum cover set size in the stem's base in the second cover
 inputs.lcyl = [3 5]; % Relative (length/radius) length of the cylinders
 inputs.FilRad = 3; % Relative radius for outlier point filtering
+inputs.out = 'models';
 
 % The following parameters can be varied and but usually can be kept as
 % shown (i.e. little bigger than PatchDiam parameters):
